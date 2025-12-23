@@ -51,29 +51,29 @@ describe("User Service (without mock)", () => {
     });
   });
 
-//   describe("deleteUserByIdService", () => {
-//     it("should delete user by id", () => {
-//       const user = createUserService({
-//         name: "Rafi",
-//         age: 22
-//       });
+  describe("deleteUserByIdService", () => {
+    it("should delete user by id", () => {
+      const user = createUserService({
+        name: "Rafi",
+        age: 22
+      });
 
-//       const deleted = deleteUserByIdService(user.id);
+      const deleted = deleteUserByIdService(user.id);
 
-//       expect(deleted.id).toBe(user.id);
-//       expect(database.length).toBe(0);
-//     });
+      expect(deleted.id).toBe(user.id);
+      expect(database.length).toBe(0);
+    });
 
-//     it("should throw error if user not found", () => {
-//       expect(() =>
-//         deleteUserByIdService("random-id")
-//       ).toThrow("User not found");
-//     });
+    it("should throw error if user not found", () => {
+      expect(() =>
+        deleteUserByIdService("random-id")
+      ).toThrow("User not found");
+    });
 
-//     it("should throw error if userId missing", () => {
-//       expect(() =>
-//         deleteUserByIdService()
-//       ).toThrow(ResponseError);
-//     });
-//   });
+    it("should throw error if userId missing", () => {
+      expect(() =>
+        deleteUserByIdService()
+      ).toThrow(ResponseError);
+    });
+  });
 });

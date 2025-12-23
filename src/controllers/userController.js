@@ -1,4 +1,4 @@
-import { createUserService, getListUsersService } from "../services/userService.js";
+import { createUserService, deleteUserByIdService, getListUsersService } from "../services/userService.js";
 
 const createUserController = (req, res, next) => {
     try {
@@ -28,21 +28,21 @@ const getListUsersController = (req, res, next) => {
     }
 };
 
-// const deleteUserByIdController = (req, res, next) => {
-//     try {
-//         const {userId} = req.params;
-//         const result = deleteUserByIdService(userId);
-//         res.json({
-//             message: "Success Delete User",
-//             data: result
-//         })
-//     } catch (error) {
-//         next(error)
-//     }
-// };
+const deleteUserByIdController = (req, res, next) => {
+    try {
+        const {userId} = req.params;
+        const result = deleteUserByIdService(userId);
+        res.json({
+            message: "Success Delete User",
+            data: result
+        })
+    } catch (error) {
+        next(error)
+    }
+};
 
 export {
     createUserController,
     getListUsersController,
-    // deleteUserByIdController
+    deleteUserByIdController
 }

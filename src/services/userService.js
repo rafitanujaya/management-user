@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 import { ResponseError } from "../error/responseError.js";
-import { createUserRepository, getListUsersRepository } from "../repositories/userRepository.js";
+import { createUserRepository, deleteUserByIdRepository, getListUsersRepository  } from "../repositories/userRepository.js";
 
 const createUserService = (user) => {
   if (!user || typeof user !== "object") {
@@ -39,16 +39,16 @@ const getListUsersService = () => {
     return getListUsersRepository();
 };
 
-// const deleteUserByIdService = (userId) => {
-//     if (!userId) {
-//         throw new ResponseError("User id is required");
-//     };
+const deleteUserByIdService = (userId) => {
+    if (!userId) {
+        throw new ResponseError("User id is required");
+    };
 
-//     return deleteUserByIdRepository(userId);
-// };
+    return deleteUserByIdRepository(userId);
+};
 
 export {
     createUserService,
     getListUsersService,
-    // deleteUserByIdService
+    deleteUserByIdService
 }
