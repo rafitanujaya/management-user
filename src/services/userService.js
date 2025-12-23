@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 import { ResponseError } from "../error/responseError.js";
-import { createUserRepository, deleteUserByIdRepository, getListUsersRepository } from "../repositories/userRepository.js";
+import { createUserRepository, getListUsersRepository } from "../repositories/userRepository.js";
 
 const createUserService = (user) => {
   if (!user || typeof user !== "object") {

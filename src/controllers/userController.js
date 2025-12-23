@@ -1,4 +1,4 @@
-import { createUserService, deleteUserByIdService, getListUsersService } from "../services/userService.js";
+import { createUserService, getListUsersService } from "../services/userService.js";
 
 const createUserController = (req, res, next) => {
     try {
@@ -44,5 +44,5 @@ const getListUsersController = (req, res, next) => {
 export {
     createUserController,
     getListUsersController,
-    deleteUserByIdController
+    // deleteUserByIdController
 }
